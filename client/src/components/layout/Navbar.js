@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
