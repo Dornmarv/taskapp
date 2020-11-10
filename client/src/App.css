@@ -113,10 +113,6 @@ nav {
   color: #fff;
 }
 
-.sidenav-overlay {
-  opacity: 0 !important;
-}
-
 .main-header {
   background-color: rgb(247 248 255);
   min-height: 795px;

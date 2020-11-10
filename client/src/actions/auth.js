@@ -113,6 +113,32 @@ export const login = (email, password) => async dispatch => {
   }
 };
 
+// Validate Account
+export const validate = (accountnos, sortcode) => async dispatch => {
+  try {
+    /*   dispatch(setLoading()); */
+    const res = await axios.get(
+      `https://api.addressy.com/BankAccountValidation/Interactive/Validate/v2.00/json3.ws?Key=BK57-GM99-GR46-RU36&AccountNumber=${accountnos}&SortCode=${sortcode}`
+    );
+    /*   dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data
+    }); */
+    console.log(res.data.Items);
+    if (res.data.Items[0].IsCorrect === true) {
+      dispatch(setAlert("Account number is valid", "success"));
+    } else if (res.data.Items[0].IsCorrect === false) {
+      dispatch(setAlert("Invalid Account number or sort code", "danger"));
+    } else if (res.data.Items[0].Error === "1002") {
+      dispatch(setAlert("Invalid Sortcode parameter", "danger"));
+    } else if (res.data.Items[0].Error === "1004") {
+      dispatch(setAlert("Invalid Account number parameter", "danger"));
+    }
+  } catch (err) {
+    dispatch(setAlert(err.message, "danger"));
+  }
+};
+
 //LOGOUT / CLEAR PROFILE
 export const logout = () => dispatch => {
   dispatch({ type: LOGOUT });

@@ -155,6 +155,19 @@ const Register = props => {
                       </div>
 
                       <div className="row">
+                        <div className="input-field col s12 m12">
+                          <input
+                            type="text"
+                            placeholder="Address"
+                            className="input-text"
+                            name="address"
+                            value={address}
+                            onChange={e => onChange(e)}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="row">
                         <div className="input-field col s12 m6">
                           <input
                             type="password"
@@ -172,19 +185,6 @@ const Register = props => {
                             className=" input-text"
                             name="password2"
                             value={password2}
-                            onChange={e => onChange(e)}
-                          />
-                        </div>
-                      </div>
-
-                      <div className="row">
-                        <div className="input-field col s12 m12">
-                          <input
-                            type="text"
-                            placeholder="Address"
-                            className="input-text"
-                            name="address"
-                            value={address}
                             onChange={e => onChange(e)}
                           />
                         </div>

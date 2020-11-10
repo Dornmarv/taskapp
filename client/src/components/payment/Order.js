@@ -33,17 +33,15 @@ const Order = ({ logout }) => {
   };
 
   const logoutLink = (
-    <li>
-      <a
-        onClick={logout}
-        className="waves-effect"
-        style={{ color: "#162337" }}
-        href="#!"
-      >
-        <i className="fas fa-sign-out-alt"></i>
-        Logout
-      </a>
-    </li>
+    <a
+      onClick={logout}
+      className="waves-effect"
+      style={{ color: "#162337" }}
+      href="#!"
+    >
+      <i className="fas fa-sign-out-alt"></i>
+      Logout
+    </a>
   );
 
   return (

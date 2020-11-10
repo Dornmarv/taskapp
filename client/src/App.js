@@ -7,6 +7,7 @@ import Home from "./components/pages/Home";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 
+import Validate from "./components/validation/Validate";
 import Order from "./components/payment/Order";
 import Success from "./components/payment/Success";
 import Cancel from "./components/payment/Cancel";
@@ -33,6 +34,7 @@ const App = () => {
         <Fragment>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/validate" component={Validate} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/success" component={Success} />
