@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Alert from "../layout/Alert";
 import { loadStripe } from "@stripe/stripe-js";
+import { logout } from "../../actions/auth";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 const stripePromise = loadStripe(
   "pk_test_51HbXY0In97M0GymUamkBnKCyOWVuT7ylEmsbLEXm4yEgVUor6mqP0mHvj5deW5kxbFqafowxPB9PtLYW1BN1xN1h00dcB0Koz8"
 );
 
-const Order = () => {
+const Order = ({ logout }) => {
   const onCheckout = async () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
@@ -28,6 +31,21 @@ const Order = () => {
       console.log(result.error.message);
     }
   };
+
+  const logoutLink = (
+    <li>
+      <a
+        onClick={logout}
+        className="waves-effect"
+        style={{ color: "#162337" }}
+        href="#!"
+      >
+        <i className="fas fa-sign-out-alt"></i>
+        Logout
+      </a>
+    </li>
+  );
+
   return (
     <section className="section section-auth">
       <div className="container">
@@ -40,7 +58,7 @@ const Order = () => {
               </h4>
             </Link>
           </div>
-          <div className="col m3"></div>
+          <div className="col m3"> {logoutLink} </div>
         </div>
 
         <div className="row">
@@ -88,4 +106,13 @@ const Order = () => {
   );
 };
 
-export default Order;
+Order.propTypes = {
+  logout: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, { logout })(Order);
