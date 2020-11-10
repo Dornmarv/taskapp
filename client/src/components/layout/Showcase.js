@@ -49,6 +49,23 @@ const Showcase = () => {
             >
               Order now
             </Link>{" "}
+            <Link
+              to="/validate"
+              style={{
+                color: "#fff",
+                backgroundColor: "#eb9011",
+                height: "54px",
+                width: "145px",
+                lineHeight: "54px",
+                fontSize: "15px",
+                fontWeight: "bold",
+                padding: "0px 10px",
+                boxShadow: "none"
+              }}
+              className="btn btn-large waves-effect waves-light"
+            >
+              Validate UK account
+            </Link>{" "}
           </div>
           <div className="col m3"></div>
         </div>
