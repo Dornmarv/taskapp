@@ -20,8 +20,8 @@ const Showcase = () => {
                 lineHeight: "55px"
               }}
             >
-              Purchase the One book <br />
-              you need
+              Purchase the book <br />
+              Lord of Flies
             </h5>
             <p
               style={{
@@ -29,7 +29,7 @@ const Showcase = () => {
                 fontWeight: "400"
               }}
             >
-              We provide competent book to indviduals, organizations
+              Interesting and Wonderful book
             </p>
             <br />
             <Link
