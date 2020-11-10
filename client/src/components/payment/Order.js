@@ -11,12 +11,9 @@ const Order = () => {
     // Get Stripe.js instance
     const stripe = await stripePromise;
     // Call your backend to create the Checkout Session
-    const response = await fetch(
-      "http://localhost:5000/create-checkout-session",
-      {
-        method: "POST"
-      }
-    );
+    const response = await fetch("/create-checkout-session", {
+      method: "POST"
+    });
     const session = await response.json();
 
     // When the customer clicks on the button, redirect them to Checkout.

@@ -11,7 +11,7 @@ import {
   SET_LOADING
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
-axios.defaults.baseURL = "http://localhost:5000";
+/* axios.defaults.baseURL = "http://localhost:5000"; */
 //Load user
 export const loadUser = () => async dispatch => {
   if (localStorage.token1) {
