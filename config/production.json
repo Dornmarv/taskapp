@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://donmarv:weblock98@task.ltei4.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
+}
